@@ -1,0 +1,3 @@
+execute cette comande dans le terminal
+
+pip install -r requirements.txt
