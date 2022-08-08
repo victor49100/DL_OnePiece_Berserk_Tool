@@ -1,4 +1,7 @@
 execute cette comande dans le terminal
 
+Installez python -> installez pip 
+
+#### command ####
 
 pip install -r /path/to/file/requirements.txt
