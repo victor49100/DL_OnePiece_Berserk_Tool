@@ -7,8 +7,7 @@ def ConvertBerserk(formatF):
     for i in range(1, 350):
         try:
             path = str(
-                #C:\Users\Victor\Desktop\MangaDownloader\Berserk\BerserkTome17\1.jpg
-                "C:/Users/Victor/Desktop/MangaDownloader/Berserk/BerserkTome"+str(Tome)+"/"+str(i)+"."+str(formatF))
+                "./Berserk/BerserkTome"+str(Tome)+"/"+str(i)+"."+str(formatF))
 
             image = Image.open(str(path))
             im = image.convert('RGB')
@@ -30,10 +29,10 @@ def ConvertOp(formatF):
         try:
             if Langue == 1:
                 path = str(
-                    "C:/Users/Victor/Desktop/MangaDownloader/OnePieceVf/OnePiece"+str(Tome)+"/"+str(i)+"."+str(formatF)) #if out of range pb change name
+                    "./OnePieceVf/OnePiece"+str(Tome)+"/"+str(i)+"."+str(formatF)) #if out of range pb change name
             if Langue == 2:
                 path = str(
-                    "C:/Users/Victor/Desktop/MangaDownloader/OnePieceEn/OnePiece"+str(Tome)+"/"+str(i)+"."+str(formatF))
+                    "./OnePieceEn/OnePiece"+str(Tome)+"/"+str(i)+"."+str(formatF))
             image = Image.open(str(path))
             im = image.convert('RGB')
             images_list.append(im)
