@@ -20,20 +20,16 @@ def DlOnePieceVf(Tome):
         os.chdir(dirname)
 
     for page in range(1, 300):
-        if page < 10:
-            idp = str("0"+str(page))
-        else:
+        if page < 100:
             idp = str(page)
 
 
         ## JPG ###
-        image_url = "https://one-piece-manga.fr/comic/" + \
+        image_url = "https://scansmangas.ws/scans/one-piece/" + \
             str(Tome)+"/"+str(idp)+".jpg"
         filename = image_url.split("/")[-1]
         filename = str(filename)
-        if page < 10:
-            filename = filename[1:]
-        else:
+        if page < 100:
             filename = filename[0:]
         r = requests.get(image_url, stream=True)
         if r.status_code == 200:
@@ -44,13 +40,11 @@ def DlOnePieceVf(Tome):
         else:
             
             ## png ##
-            image_url = "https://one-piece-manga.fr/comic/" + \
+            image_url = "https://scansmangas.ws/scans/one-piece/" + \
                 str(Tome)+"/"+str(idp)+".png"
             filename = image_url.split("/")[-1]
             filename = str(filename)
-            if page < 10:
-                filename = filename[1:]
-            else:
+            if page < 100:
                 filename = filename[0:]
             r = requests.get(image_url, stream=True)
             if r.status_code == 200:
@@ -61,13 +55,11 @@ def DlOnePieceVf(Tome):
 
             else:
                 ## Webp ##
-                image_url = "https://one-piece-manga.fr/comic/" + \
+                image_url = "https://scansmangas.ws/scans/one-piece/" + \
                     str(Tome)+"/"+str(idp)+".webp"
                 filename = image_url.split("/")[-1]
                 filename = str(filename)
-                if page < 10:
-                    filename = filename[1:]
-                else:
+                if page < 100:
                     filename = filename[0:]
                 r = requests.get(image_url, stream=True)
                 if r.status_code == 200:
