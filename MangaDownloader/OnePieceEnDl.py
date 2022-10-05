@@ -7,6 +7,10 @@ import Url
 def DlOnePieceEn(Tome):
     #iTome = int(input("Which chapter is your download?: "))
     dirname = ("OnePiece"+str(Tome))
+    file = open ("lastChapter.txt","r")
+    lastChapter = file.readline()
+    lastChapter = int(lastChapter)
+    print (lastChapter)
 
     if not os.path.exists('OnePieceEn'):
         os.makedirs("OnePieceEn")
