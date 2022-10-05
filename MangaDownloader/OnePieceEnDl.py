@@ -25,7 +25,7 @@ def DlOnePieceEn(Tome):
 
     for page in range(1, 50):
 
-        if Tome <= 1062:
+        if Tome <= lastChapter:
             image_url = Url.ConvertUrlToTome(Tome)
             image_url = image_url.replace("X", str(page))
             filename = image_url.split("/")[-1]
