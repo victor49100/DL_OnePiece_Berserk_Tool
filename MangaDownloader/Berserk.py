@@ -20,11 +20,13 @@ def DlBerserk():
 
     for page in range (1,300):
         if page<10:
-            idp = str("0"+str(page))
-        else:
-            idp = page
-            
-        image_url = "https://scansmangas.ws/scans/berserk/"+str(Tome)+"/"+str(page)+".jpg"
+            idp = str("00"+str(page))
+        if page<99 and page >10:
+            idp = str("00"+str(page))
+        if page>99:
+            idp = str("00"+str(page))
+        image_url = "https://opfrcdn.xyz/uploads/manga/berserk/chapters/Volume%20"+str(Tome)+"/"+str(idp)+".jpg"
+        print (image_url)
         filename = image_url.split("/")[-1]
         # Open the url image, set stream to True, this will return the stream content.
         r = requests.get(image_url, stream = True)
@@ -37,7 +39,7 @@ def DlBerserk():
                 shutil.copyfileobj(r.raw, f)
             print('Image sucessfully Downloaded: ',filename)
         else:
-            image_url = "https://scansmangas.ws/scans/berserk/"+str(Tome)+"/"+str(page)+".png"
+            image_url = "https://opfrcdn.xyz/uploads/manga/berserk/chapters/Volume%20"+str(Tome)+"/"+str(idp)+".png"
             filename = image_url.split("/")[-1]
             r = requests.get(image_url, stream = True)
             if r.status_code == 200:
@@ -46,7 +48,7 @@ def DlBerserk():
                     shutil.copyfileobj(r.raw, f)
                 print('Image sucessfully Downloaded: ',filename)
             else:
-                image_url = "https://scansmangas.ws/scans/berserk/"+str(Tome)+"/"+str(page)+".webp"
+                image_url = "https://opfrcdn.xyz/uploads/manga/berserk/chapters/Volume%20"+str(Tome)+"/"+str(idp)+".webp"
             filename = image_url.split("/")[-1]
             r = requests.get(image_url, stream = True)
             if r.status_code == 200:
@@ -57,8 +59,10 @@ def DlBerserk():
                 os.system(cmd)
             else:
                 os.chdir('..')
-                os.rmdir("Berserk"+str(Tome))
+                os.rmdir("BerserkTome"+str(Tome))
                 print('aucun contenu trouvé !')
                 print ("fin :"+str((page-1))+" pages tétéchargé")
                 os.system('pause')
                 break
+
+#https://opfrcdn.xyz/uploads/manga/berserk/chapters/Volume%2019/001.jpg
