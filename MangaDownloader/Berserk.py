@@ -30,9 +30,6 @@ def DlBerserkEn():
     
     for i in range (0,Delta):
         NomFichier = NomFichier-1
-        
-        print(i)
-        print(Delta)
         pourcent = (((i+1)/Delta)*100)
         for page in range(1, 50):
             NomFichier=NomFichier+1
@@ -50,7 +47,6 @@ def DlBerserkEn():
                 #print('Image sucessfully Downloaded: ', filename)
             else:
                 #print('aucun contenu trouvé !')
-                print ("fin tour")
                 print(str(pourcent)+"%")
                 ChapitreDebut = ChapitreDebut+1
                 break
