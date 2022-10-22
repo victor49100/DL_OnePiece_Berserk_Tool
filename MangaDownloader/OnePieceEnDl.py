@@ -28,6 +28,7 @@ def DlOnePieceEn(Tome):
         if Tome <= lastChapter:
             image_url = Url.ConvertUrlToTome(Tome)
             image_url = image_url.replace("X", str(page))
+            print (image_url)
             filename = image_url.split("/")[-1]
             r = requests.get(image_url, stream=True)
             if r.status_code == 200:
@@ -39,6 +40,7 @@ def DlOnePieceEn(Tome):
                 image_url = Url.ConvertUrlToTome(Tome)
                 image_url = image_url.replace("X", str(page))
                 image_url = image_url.replace("jpeg", str("png"))
+                print (image_url)
                 filename = image_url.split("/")[-1]
                 r = requests.get(image_url, stream=True)
                 if r.status_code == 200:

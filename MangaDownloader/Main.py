@@ -1,7 +1,7 @@
 from OnePieceEnDl import DlOnePieceEn
 from OnePieceVfDl import DlOnePieceVf
 from PdfConv import Mainpdf
-from Berserk import DlBerserk
+from Berserk import DlBerserkEn
 
 def dl():
     Tome = int(input("Voulez vous telechargé One Piece (1) ou Berserk (2) ? "))
@@ -13,7 +13,7 @@ def dl():
         if Lang == 2: #An
             DlOnePieceEn(T)
     if Tome == 2: #berserk
-        DlBerserk()
+        DlBerserkEn()
 
 def pdf():
     Mainpdf()

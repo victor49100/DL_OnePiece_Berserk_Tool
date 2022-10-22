@@ -4,11 +4,9 @@ from PIL import Image
 def ConvertBerserk(formatF):
     Tome = int(input("Quel est le Tome à convertir en PDF ?: "))
     images_list = []
-    for i in range(1, 350):
+    for i in range(0, 350):
         try:
-            path = str(
-                "./Berserk/BerserkTome"+str(Tome)+"/"+str(i)+"."+str(formatF))
-
+            path = str("./Berserk/BerserkTome"+str(Tome)+"/"+str(i)+"."+str(formatF))
             image = Image.open(str(path))
             im = image.convert('RGB')
             images_list.append(im)
