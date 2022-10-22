@@ -1,3 +1,4 @@
+from this import d
 import requests  # to get image from the web
 import shutil  # to save it locally
 import os
@@ -9,7 +10,7 @@ def DlBerserkEn():
     ChapitreDebut = int(input("premier Chapitre : "))
     ChapitreFin = int(input("deuxieme Chapitre : "))
     Delta = ChapitreFin-ChapitreDebut
-    print ("nombre de chapitre dans le tome : "+Delta)
+    print ("nombre de chapitre dans le tome :"+str(Delta))
     dirname = ("Berserk"+str(ChapitreDebut))
     if not os.path.exists('Berserk'):
         os.makedirs("Berserk")
@@ -17,14 +18,22 @@ def DlBerserkEn():
     os.chdir('Berserk')
     if os.path.exists("Berserk"+str(ChapitreDebut)):
         os.chdir(dirname)
+        NomFichier = 0
+        print ("0%")
     else:
         dirname = ("Berserk"+str(ChapitreDebut))
         os.mkdir(dirname)
         os.chdir(dirname)
         NomFichier = 0
-
-    for i in range (0,Delta+1):
+        print ("0%")
+        Delta=Delta+1
+    
+    for i in range (0,Delta):
         NomFichier = NomFichier-1
+        
+        print(i)
+        print(Delta)
+        pourcent = (((i+1)/Delta)*100)
         for page in range(1, 50):
             NomFichier=NomFichier+1
             image_url = Url.ConvertUrlToTomeBs(ChapitreDebut)
@@ -38,9 +47,11 @@ def DlBerserkEn():
                 with open(filename, 'wb') as f:
                     shutil.copyfileobj(r.raw, f)
 
-                print('Image sucessfully Downloaded: ', filename)
+                #print('Image sucessfully Downloaded: ', filename)
             else:
-                print('aucun contenu trouvé !')
+                #print('aucun contenu trouvé !')
+                print ("fin tour")
+                print(str(pourcent)+"%")
                 ChapitreDebut = ChapitreDebut+1
                 break
 #print(DlBerserkEn())
