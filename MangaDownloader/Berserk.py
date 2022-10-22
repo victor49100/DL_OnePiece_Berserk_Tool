@@ -5,8 +5,9 @@ import Url
 
 
 def DlBerserkEn():
-    ChapitreDebut = int(input("premier tome : "))
-    ChapitreFin = int(input("deuxieme tome : "))
+    print ("listes des chapitres : https://fr.wikipedia.org/wiki/Liste_des_chapitres_de_Berserk")
+    ChapitreDebut = int(input("premier Chapitre : "))
+    ChapitreFin = int(input("deuxieme Chapitre : "))
     Delta = ChapitreFin-ChapitreDebut
     print (Delta)
     dirname = ("Berserk"+str(ChapitreDebut))
@@ -20,7 +21,6 @@ def DlBerserkEn():
         dirname = ("Berserk"+str(ChapitreDebut))
         os.mkdir(dirname)
         os.chdir(dirname)
-
         NomFichier = 0
 
     for i in range (0,Delta+1):
@@ -29,7 +29,7 @@ def DlBerserkEn():
             NomFichier=NomFichier+1
             image_url = Url.ConvertUrlToTomeBs(ChapitreDebut)
             image_url = image_url.replace("X", str(page))
-            print(image_url)
+            #print(image_url)
             filename = image_url.split(".")[-1]
             filename = str(NomFichier)+"."+filename
             r = requests.get(image_url, stream=True)
