@@ -9,7 +9,7 @@ def DlBerserkEn():
     ChapitreDebut = int(input("premier Chapitre : "))
     ChapitreFin = int(input("deuxieme Chapitre : "))
     Delta = ChapitreFin-ChapitreDebut
-    print (Delta)
+    print ("nombre de chapitre dans le tome : "+Delta)
     dirname = ("Berserk"+str(ChapitreDebut))
     if not os.path.exists('Berserk'):
         os.makedirs("Berserk")
