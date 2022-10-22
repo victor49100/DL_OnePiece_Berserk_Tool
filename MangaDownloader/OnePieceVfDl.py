@@ -20,13 +20,16 @@ def DlOnePieceVf(Tome):
         os.chdir(dirname)
 
     for page in range(1, 300):
-        if page < 100:
+        if page < 10:
+            idp = str('0'+str(page))
+        else:
             idp = str(page)
 
 
         ## JPG ###
-        image_url = "https://scansmangas.ws/scans/one-piece/" + \
-            str(Tome)+"/"+str(idp)+".jpg"
+        image_url = "https://i2.wp.com/sushiscan.su/wp-content/uploads26/OPChap" + \
+            str(Tome)+"fix-"+str(idp)+".png"
+        print(image_url)
         filename = image_url.split("/")[-1]
         filename = str(filename)
         if page < 100:
@@ -40,8 +43,8 @@ def DlOnePieceVf(Tome):
         else:
             
             ## png ##
-            image_url = "https://scansmangas.ws/scans/one-piece/" + \
-                str(Tome)+"/"+str(idp)+".png"
+            image_url = "https://i2.wp.com/sushiscan.su/wp-content/uploads26/OPChap" + \
+            str(Tome)+"fix-"+str(idp)+".jpg"
             filename = image_url.split("/")[-1]
             filename = str(filename)
             if page < 100:
@@ -55,8 +58,8 @@ def DlOnePieceVf(Tome):
 
             else:
                 ## Webp ##
-                image_url = "https://scansmangas.ws/scans/one-piece/" + \
-                    str(Tome)+"/"+str(idp)+".webp"
+                image_url = "https://i2.wp.com/sushiscan.su/wp-content/uploads26/OPChap" + \
+                str(Tome)+"fix-"+str(idp)+".webp"
                 filename = image_url.split("/")[-1]
                 filename = str(filename)
                 if page < 100:
