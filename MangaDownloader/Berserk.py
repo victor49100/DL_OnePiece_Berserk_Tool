@@ -47,7 +47,7 @@ def DlBerserkEn():
                 #print('Image sucessfully Downloaded: ', filename)
             else:
                 #print('aucun contenu trouvé !')
-                print(str(pourcent)+"%")
+                print(str(round(pourcent))+"%")
                 ChapitreDebut = ChapitreDebut+1
                 break
 #print(DlBerserkEn())
